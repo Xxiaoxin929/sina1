@@ -1,0 +1,90 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人介绍</title>
+    <link rel="stylesheet" href="css/liuyan.css">
+
+</head>
+
+<body>
+    <div id="bigbox">
+        <div id="banner">
+            <img class="img-slide img1" src="img/bg1.png" alt="1">
+            <img class="img-slide img2" src="img/1.png" alt="2">
+            <img class="img-slide img3" src="img/4.png" alt="3">
+        </div>
+        <nav>
+            <a href="star.html">首页</a>
+            <a href="duanwen.html">短文</a>
+            <a href="aihao.html">爱好</a>
+            <a class="dangqian">留言板</a>
+        </nav>
+        <div id="main">
+            <div id="main_right">
+
+                <h2>有什么需要给我留言的吗</h2>
+                <p><span>姓名:</span><input id="input" type="text" placeholder="你的姓名"></p>
+                <p><span>电话:</span><input id="input" type="text" placeholder="联系方式"></p>
+                <p><span style="position: relative; bottom:60px;">留言:</span><textarea></textarea></p>
+                <p><button>发布</button></p>
+                
+                
+                <ul></ul>
+                <script>
+                    //1、获取元素
+                    var txt = document.querySelector("textarea");
+                    var btn = document.querySelector("button");
+                    var ul = document.querySelector("ul");
+                    //2、给button绑定点击事件
+                    btn.onclick = function () {
+                        if (txt.value == "") {//当文本框中没有文字时，提示
+                            alert("您没有输入内容")
+                        } else {
+                            //创建元素li作为留言区
+                            var li = document.createElement("li");
+                            //将文本框中的内容放到li中,a标签中href中的内容代表什么都不执行
+                            li.innerHTML = txt.value + "<a href='javascript:;'>删除</a>"
+                            txt.value = "";//添加之后文本框的内容清空
+                            //将留言添加到ul中，而且在最上方
+                            ul.insertBefore(li, ul.children[0]);
+                            //当点击删除时删除ul中的li
+                            var as = document.querySelectorAll("a");
+                            //循环给每个删除绑定事件
+                            for (var i = 0; i < as.length; i++) {
+                                as[i].onclick = function () {
+                                    //删除当前a标签所在位置的父节点li
+                                    ul.removeChild(this.parentNode);
+                                }
+                            }
+                        }
+                    }
+                </script>
+                <img src="img/6.png" alt="">
+            </div>
+        </div>
+        <footer>
+            <p>
+                愿你开心每一天
+            </p>
+        </footer>
+    </div>
+    <script type="text/javascript">
+        var index=0;
+        //效果
+        function ChangeImg() {
+            index++;
+            var a=document.getElementsByClassName("img-slide");
+            if(index>=a.length) index=0;
+            for(var i=0;i<a.length;i++){
+                a[i].style.display='none';
+            }
+            a[index].style.display='block';
+        }
+        //设置定时器，每隔两秒切换一张图片
+        setInterval(ChangeImg,3000);
+    </script>
+</body>
+
+</html>

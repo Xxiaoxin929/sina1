@@ -1,0 +1,66 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人介绍</title>
+    <link rel="stylesheet" href="css/aihao.css">
+
+</head>
+
+<body>
+    <div id="bigbox">
+        <div id="banner">
+            <img class="img-slide img1" src="img/bg1.png" alt="1">
+            <img class="img-slide img2" src="img/1.png" alt="2">
+            <img class="img-slide img3" src="img/4.png" alt="3">
+        </div>
+        <nav>
+            <a href="star.html">首页</a>
+            <a href="duanwen.html">短文</a>
+            <a class="dangqian">爱好</a>
+            <a href="liuyan.html">留言板</a>
+        </nav>
+        <div id="main">
+            <div id="main_right">
+
+                <h2>爱好</h2>
+                <p>
+                    一、性格<br>
+                    我的性格是偏向外向大胆，积极乐观，喜欢与人接触，对于自己交的朋友，都会认真的去对待，并且能够跟朋友交流沟通。
+                </p>
+                <p>
+                    二、兴趣<br>
+                    从小开始，我就对运动很感兴趣，比如乒乓球、网球、羽毛球这些运动，都是比较擅长的，不管什么时候我觉得最解压的方式无异于去打把球，这样不仅能达到锻炼的目的，还能解除心理的烦闷以及学习所带来的压力。当然这些活动也能够让我认识一群志同道合的朋友。
+                </p>
+                <p>
+                    三、能力<br>
+                    与爱好相关，我的体育能力也能得到记到的改善。也能够善于吃苦。
+                </p>
+                <img src="img/7.png" alt="">
+            </div>
+        </div>
+        <footer>
+            <p>
+                愿你开心每一天
+            </p>
+        </footer>
+    </div>
+    <script type="text/javascript">
+        var index=0;
+        //效果
+        function ChangeImg() {
+            index++;
+            var a=document.getElementsByClassName("img-slide");
+            if(index>=a.length) index=0;
+            for(var i=0;i<a.length;i++){
+                a[i].style.display='none';
+            }
+            a[index].style.display='block';
+        }
+        //设置定时器，每隔两秒切换一张图片
+        setInterval(ChangeImg,3000);
+    </script>
+</body>
+
+</html>

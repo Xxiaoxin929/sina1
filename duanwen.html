@@ -1,0 +1,66 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人介绍</title>
+    <link rel="stylesheet" href="css/duanwen.css">
+
+</head>
+
+<body>
+    <div id="bigbox">
+        <div id="banner">
+            <img class="img-slide img1" src="img/bg1.png" alt="1">
+            <img class="img-slide img2" src="img/1.png" alt="2">
+            <img class="img-slide img3" src="img/4.png" alt="3">
+        </div>
+        <nav>
+            <a href="star.html">首页</a>
+            <a href="" class="dangqian">短文</a>
+            <a href="aihao.html">爱好</a>
+            <a href="liuyan.html">留言板</a>
+        </nav>
+        <div id="main">
+            <div id="main_right">
+
+                <h2>史铁生&nbsp&nbsp散文集节选</h2>
+                <p>
+                    一、上帝从来不对任何人施舍“最幸福”这三个字，他在所有人的欲望前面设下永恒的距离，公平地给每一个人以局限。<br>
+                    ——史铁生&nbsp&nbsp《我的梦想》
+                </p>
+                <p>
+                    二、我们是获得了生命的星尘，然后被宇宙赋予了发现自我的使命——而我们的旅程才刚刚开始。<br>
+                    ——史铁生&nbsp&nbsp《给忙碌者的天体物理学》
+                </p>
+                <p>
+                    三、春天是卧病的季节，否则人们不易发觉春天的残忍与渴望；夏天，情人们应该在这个季节里失恋，不然就似乎对不起爱情；秋天是从外面买一盆花回家的时候，把花搁在阔别了的家中，并且打开窗户把阳光也放进屋里，慢慢回忆整理一些发过霉的东西;冬天伴着火炉和书，一遍遍坚定不死的决心，写一些并不发出的信。<br>
+                    ——史铁生&nbsp&nbsp《我与地坛》
+                </p>
+                <img src="img/3.png" alt="">
+            </div>
+        </div>
+        <footer>
+            <p>
+                愿你开心每一天
+            </p>
+        </footer>
+    </div>
+    <script type="text/javascript">
+        var index=0;
+        //效果
+        function ChangeImg() {
+            index++;
+            var a=document.getElementsByClassName("img-slide");
+            if(index>=a.length) index=0;
+            for(var i=0;i<a.length;i++){
+                a[i].style.display='none';
+            }
+            a[index].style.display='block';
+        }
+        //设置定时器，每隔两秒切换一张图片
+        setInterval(ChangeImg,3000);
+    </script>
+</body>
+
+</html>
